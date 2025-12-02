@@ -1,0 +1,129 @@
+:root {
+  --bs-primary: #f97316;
+  --bs-primary-rgb: 249, 115, 22;
+  --bs-warning-rgb: 251, 191, 36;
+  --bs-body-font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --scrollbar-thumb: rgba(249, 115, 22, 0.3);
+  --scrollbar-thumb-hover: rgba(249, 115, 22, 0.5);
+}
+body {
+  background: linear-gradient(135deg, #fff7ed 0, #fffbeb 50%, #fefce8 100%);
+  min-height: 100vh;
+}
+.bg-gradient-orange {
+  background: linear-gradient(135deg, #fff7ed, #fffbeb);
+}
+.icon-box {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #f97316, #ef4444);
+}
+.hover-primary:hover {
+  color: var(--bs-primary) !important;
+}
+.hover-scale {
+  transition: transform 0.15s ease-in-out;
+}
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+}
+.btn-primary {
+  background: linear-gradient(to right, #f97316, #ef4444);
+  border: none;
+}
+.btn-primary:hover {
+  background: linear-gradient(to right, #ea580c, #dc2626);
+}
+.btn-warning-subtle {
+  background-color: #ffedd5;
+  color: #ea580c;
+  border: none;
+}
+.btn-warning-subtle:hover {
+  background-color: #fed7aa;
+  color: #c2410c;
+}
+.tab-button {
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  padding-bottom: 0.5rem;
+  white-space: nowrap;
+}
+.tab-button.active {
+  color: var(--bs-primary) !important;
+  border: none !important;
+    border-bottom: 2px solid var(--bs-primary) !important;
+}
+.tab-button:not(.active):hover {
+  color: #374151 !important;
+}
+.badge-circle {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+.badge-square-lg,
+.icon-square {
+  display: flex;
+  font-size: 1.25rem;
+}
+.badge-square-lg {
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+}
+.icon-square {
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+}
+.content-scrollable {
+  overflow-y: auto;
+  max-height: 400px;
+}
+.tab-content-area {
+  min-height: 350px;
+}
+@media (min-width: 992px) {
+  .lg-h-750 {
+    height: 750px;
+  }
+  .img-col {
+    height: 100%;
+  }
+  .content-scrollable {
+    max-height: none;
+  }
+}
+@media (max-width: 991px) {
+  .img-col {
+    height: 400px;
+  }
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: 0 0;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>كمال محمد - What's For Dinner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="font-poppins">
+    
+    <header id="header" class="bg-white shadow-sm border-bottom border-warning-subtle">
+      <div class="container-xl px-4 py-3">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center gap-3">
+            <div class="icon-box rounded-circle shadow-lg d-flex align-items-center justify-content-center">
+              <i class="text-white fa-solid fa-utensils"></i>
+            </div>
+            <div>
+              <h1 class="h5 md-h4 fw-bold text-dark mb-0">What's For Dinner</h1>
+              <p class="small text-muted mb-0">Your daily meal inspiration</p>
+            </div>
+          </div>
+          
+          <div class="d-none d-md-flex align-items-center gap-4">
+            <button class="btn btn-link text-secondary p-0 text-decoration-none hover-primary">
+              <i class="fa-solid fa-bookmark fs-5"></i>
+            </button>
+            <button class="btn btn-link text-secondary p-0 text-decoration-none hover-primary">
+              <i class="fa-solid fa-clock-rotate-left fs-5"></i>
+            </button>
+            <button class="btn btn-link text-secondary p-0 text-decoration-none hover-primary">
+              <i class="fa-solid fa-gear fs-5"></i>
+            </button>
+            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg" alt="Profile" class="rounded-circle border border-2 border-warning" width="40" height="40">
+          </div>
+          
+          <button id="mobile-menu-btn" class="d-md-none btn btn-link text-secondary p-0 text-decoration-none">
+            <i class="fa-solid fa-bars fs-4"></i>
+          </button>
+        </div>
+        
+        <div id="mobile-menu" class="d-none d-md-none mt-3 pt-3 border-top border-warning-subtle">
+          <div class="d-flex flex-column gap-3">
+            <button class="btn btn-link text-secondary text-decoration-none text-start p-0 hover-primary d-flex align-items-center">
+              <i class="fa-solid fa-bookmark me-3 fs-5"></i>
+              <span>Saved Recipes</span>
+            </button>
+            <button class="btn btn-link text-secondary text-decoration-none text-start p-0 hover-primary d-flex align-items-center">
+              <i class="fa-solid fa-clock-rotate-left me-3 fs-5"></i>
+              <span>Recent</span>
+            </button>
+            <button class="btn btn-link text-secondary text-decoration-none text-start p-0 hover-primary d-flex align-items-center">
+              <i class="fa-solid fa-gear me-3 fs-5"></i>
+              <span>Settings</span>
+            </button>
+            <button class="btn btn-link text-secondary text-decoration-none text-start p-0 hover-primary d-flex align-items-center">
+              <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg" alt="Profile" class="rounded-circle border border-2 border-warning me-3" width="32" height="32">
+              <span>Profile</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="container-xl px-4 py-4">
+
+      <section id="recipe-display-section" class="bg-white rounded-4 shadow overflow-hidden mb-4 border border-warning-subtle">
+        <div class="row g-0 lg-h-750">
+          
+          <div class="col-lg-5 position-relative img-col">
+            <img id="recipe-image" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1546793665-c74683f339c1?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Recipe Image">
+            
+            <div class="position-absolute top-0 start-0 m-4 bg-white rounded-pill px-3 py-2 shadow">
+              <div class="d-flex align-items-center gap-2">
+                <i class="fa-solid fa-star text-warning"></i>
+                <span class="fw-bold text-dark" id="rating-average">4.4</span>
+                <span class="small text-muted" id="rating-quantity">(198 reviews)</span>
+              </div>
+            </div>
+            
+            <div class="position-absolute bottom-0 start-0 end-0 m-4 glass-card rounded-4 p-3 shadow">
+              <div class="row text-center">
+                <div class="col-4">
+                  <i class="fa-regular fa-clock text-primary fs-5 mb-1 d-block"></i>
+                  <p class="small text-muted mb-0">Prep Time</p>
+                  <p class="fw-bold text-dark mb-0" id="prep-time-display">15 min</p>
+                </div>
+                <div class="col-4 border-start border-end">
+                  <i class="fa-solid fa-fire-burner text-danger fs-5 mb-1 d-block"></i>
+                  <p class="small text-muted mb-0">Cook Time</p>
+                  <p class="fw-bold text-dark mb-0" id="cook-time-display">0 min</p>
+                </div>
+                <div class="col-4">
+                  <i class="fa-solid fa-users text-info fs-5 mb-1 d-block"></i>
+                  <p class="small text-muted mb-0">Servings</p>
+                  <p class="fw-bold text-dark mb-0" id="servings-display">2 people</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-7 p-4 p-lg-5 d-flex flex-column h-100 overflow-hidden">
+            <div class="content-scrollable flex-grow-1 pe-2">
+                <div class="d-flex flex-column flex-md-row gap-3 align-items-start justify-content-between mb-4">
+                <div>
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                    <span class="badge bg-success-subtle text-success rounded-pill px-3" id="difficulty-badge">Easy</span>
+                    <span class="badge bg-primary-subtle text-primary rounded-pill px-3" id="category-badge">Mediterranean</span>
+                    </div>
+                    <h3 class="display-6 fw-bold text-dark mb-2" id="recipe-name">Caesar Salad</h3>
+                    <p class="lead text-muted fs-6" id="recipe-description">Classic salad with crispy romaine and creamy dressing</p>
+                </div>
+                <div class="d-flex gap-2 align-self-end align-self-md-center order-first order-md-last">
+                    <button class="btn btn-warning-subtle text-primary p-0 d-flex align-items-center justify-content-center rounded-3" style="width: 48px; height: 48px;">
+                    <i class="fa-solid fa-bookmark"></i>
+                    </button>
+                    <button class="btn btn-warning-subtle text-primary p-0 d-flex align-items-center justify-content-center rounded-3" style="width: 48px; height: 48px;">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    </button>
+                </div>
+                </div>
+
+                <div id="time-warning" class="alert alert-danger d-flex align-items-center mb-4 d-none" role="alert">
+                <i class="fa-solid fa-triangle-exclamation text-danger fs-4 me-3"></i>
+                <div>
+                    <p class="fw-bold text-danger mb-0">Extended Preparation Time</p>
+                    <p class="small text-danger mb-0">This recipe requires more than 45 minutes to prepare. Plan accordingly!</p>
+                </div>
+                </div>
+
+                <div class="border-bottom mb-4">
+                <div class="d-flex gap-2 overflow-auto pb-2 custom-tabs">
+                    <button class="btn tab-button active fw-semibold d-flex align-items-center" data-tab="ingredients">
+                    <i class="fa-solid fa-list-check me-2"></i> Ingredients
+                    </button>
+                    <button class="btn tab-button fw-semibold d-flex align-items-center text-muted" data-tab="instructions">
+                    <i class="fa-solid fa-book-open me-2"></i> Instructions
+                    </button>
+                    <button class="btn tab-button fw-semibold d-flex align-items-center text-muted" data-tab="nutrition">
+                    <i class="fa-solid fa-chart-pie me-2"></i> Nutrition
+                    </button>
+                    <button class="btn tab-button fw-semibold d-flex align-items-center text-muted" data-tab="tips">
+                    <i class="fa-regular fa-lightbulb me-2"></i> Chef's Tips
+                    </button>
+                </div>
+                </div>
+
+                <div id="ingredients-tab" class="tab-content-area">
+                <div class="bg-gradient-orange rounded-4 p-4">
+                    <ul class="list-unstyled mb-0 d-flex flex-column gap-3" id="ingredients-list">
+                    </ul>
+                </div>
+                </div>
+
+                <div id="instructions-tab" class="tab-content-area d-none">
+                <div class="d-flex flex-column gap-4" id="instructions-list">
+                    </div>
+                </div>
+
+                <div id="nutrition-tab" class="tab-content-area d-none">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-between p-3 bg-light rounded-3">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-square bg-warning-subtle text-warning rounded-2 me-3">
+                                    <i class="fa-solid fa-fire"></i>
+                                </div>
+                                <span class="fw-medium text-secondary">Calories</span>
+                            </div>
+                            <span class="fw-bold text-dark fs-5" id="calories-value">--</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-between p-3 bg-light rounded-3">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-square bg-info-subtle text-info rounded-2 me-3">
+                                    <i class="fa-solid fa-dumbbell"></i>
+                                </div>
+                                <span class="fw-medium text-secondary">Protein</span>
+                            </div>
+                            <span class="fw-bold text-dark fs-5" id="protein-value">--</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-between p-3 bg-light rounded-3">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-square bg-warning-subtle text-warning rounded-2 me-3">
+                                    <i class="fa-solid fa-wheat-awn"></i>
+                                </div>
+                                <span class="fw-medium text-secondary">Carbs</span>
+                            </div>
+                            <span class="fw-bold text-dark fs-5" id="carbs-value">--</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-between p-3 bg-light rounded-3">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-square bg-danger-subtle text-danger rounded-2 me-3">
+                                    <i class="fa-solid fa-droplet"></i>
+                                </div>
+                                <span class="fw-medium text-secondary">Fat</span>
+                            </div>
+                            <span class="fw-bold text-dark fs-5" id="fat-value">--</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-between p-3 bg-light rounded-3">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-square bg-success-subtle text-success rounded-2 me-3">
+                                    <i class="fa-solid fa-seedling"></i>
+                                </div>
+                                <span class="fw-medium text-secondary">Fiber</span>
+                            </div>
+                            <span class="fw-bold text-dark fs-5" id="fiber-value">--</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-between p-3 bg-light rounded-3">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-square bg-primary-subtle text-primary rounded-2 me-3">
+                                    <i class="fa-solid fa-cube"></i>
+                                </div>
+                                <span class="fw-medium text-secondary">Sodium</span>
+                            </div>
+                            <span class="fw-bold text-dark fs-5" id="sodium-value">--</span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div id="tips-tab" class="tab-content-area d-none">
+                <div class="d-flex flex-column gap-3" id="tips-list">
+                    </div>
+                </div>
+            </div> <div class="mt-4 pt-4 border-top">
+              <button id="try-another-btn" class="btn btn-primary btn-lg w-auto shadow hover-scale rounded-3 d-inline-flex align-items-center text-white">
+                <i class="fa-solid fa-rotate me-2"></i> Try Another Recipe
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
